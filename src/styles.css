@@ -1,0 +1,94 @@
+h1 {
+  font-family: "Quicksand", sans-serif;
+  margin-left: 25px;
+  margin-top: 50px;
+  color: #1f4068;
+}
+
+p {
+  margin: 10px;
+  color: #0779e4;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+a:hover {
+  color: rgb(104, 104, 104);
+}
+
+.card-body {
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+}
+
+.container {
+  max-width: 700px;
+  margin-top: 0 auto;
+  padding: 60px 20px;
+}
+
+.humidity-wind {
+  margin-left: 60px;
+  margin-top: 80px;
+}
+
+.quote {
+  font-family: "Quicksand", sans-serif;
+  margin: 20px 20px 0 0;
+  padding: 30px 10px;
+  color: #d8345f;
+}
+
+.current-weather {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.fas {
+  font-size: 40px;
+  color: #222831;
+}
+
+.fa-current {
+  font-size: 50px;
+}
+
+.fa-map-pin {
+  font-size: 25px;
+}
+
+.current-temperature {
+  font-size: 60px;
+  color: #1f4068;
+}
+
+.degrees {
+  position: relative;
+  bottom: 30px;
+}
+
+.today {
+  position: relative;
+  top: -50px;
+  left: 20px;
+}
+
+.five-days {
+  text-align: center;
+  position: relative;
+  right: 10px;
+}
