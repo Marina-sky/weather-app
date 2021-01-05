@@ -23,6 +23,10 @@ a:hover {
   color: rgb(104, 104, 104);
 }
 
+footer {
+  font-size: 14px;
+}
+
 .card-body {
   background-image: linear-gradient(
     to top,
