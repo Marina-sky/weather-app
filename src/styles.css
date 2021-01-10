@@ -59,7 +59,11 @@ footer {
 
 .current-weather {
   font-size: 18px;
-  text-transform: capitalize;
+  display: block;
+}
+
+.current-weather::first-letter {
+  text-transform: uppercase;
 }
 
 .fas {

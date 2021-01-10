@@ -1,8 +1,12 @@
 // Day and time
-let now = new Date();
-let currentDayTime = document.querySelector("#current-day-time");
-
-let days = [
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+    if (minutes < 10) {
+    minutes = `0${minutes}`;
+    }
+  let days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -10,20 +14,10 @@ let days = [
   "Thursday",
   "Friday",
   "Saturday"
-];
-let day = days[now.getDay()];
-
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+  ];
+  let day = days[date.getDay()];
+  return `${day}, ${hours}:${minutes}`;
 }
-
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-
-currentDayTime.innerHTML = `${day}, ${hours}:${minutes}`;
 
 // Show city and current weather
 function showCurrentWeather(response) {
@@ -37,6 +31,7 @@ function showCurrentWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#current-day-time").innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function searchCity(cityInput) {
