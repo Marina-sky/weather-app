@@ -32,6 +32,7 @@ function showCurrentWeather(response) {
     response.data.wind.speed
   );
   document.querySelector("#current-day-time").innerHTML = formatDate(response.data.dt * 1000);
+  document.querySelector("#condition-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function searchCity(cityInput) {
