@@ -21,9 +21,11 @@ function formatDate(timestamp) {
 
 // Show city and current weather
 function showCurrentWeather(response) {
+  celsiusTemperature = response.data.main.temp;
+
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#current-temp").innerHTML = Math.round(
-    response.data.main.temp
+    celsiusTemperature
   );
   document.querySelector("#condition").innerHTML =
     response.data.weather[0].description;
@@ -65,5 +67,31 @@ function getCurrentPosition() {
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentPosition);
+
+// Unit conversion
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 searchCity("Zagreb");

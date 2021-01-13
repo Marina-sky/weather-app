@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: rgb(104, 104, 104);
+  color: rgb(163, 57, 57);
 }
 
 footer {
@@ -75,7 +75,7 @@ footer {
 .current-icon {
   font-size: 50px;
   position: relative;
-  bottom: 14px;
+  bottom: 20px;
   right: 20px;
 }
 
@@ -90,10 +90,15 @@ footer {
   right: 35px;
 }
 
-.degrees {
+.units {
   position: relative;
   bottom: 30px;
   right: 35px;
+}
+
+.units .active {
+  color: #0779e4;
+  cursor: default;
 }
 
 .today {
