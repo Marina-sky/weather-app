@@ -112,9 +112,16 @@ footer {
   position: relative;
   right: 10px;
   bottom: 40px;
-  color: #1f4068;
 }
 
 .forecast-icons {
   width: 70px;
+}
+
+.hour {
+  color: #0779e4;
+}
+
+.forecast-temp {
+  color: #1f4068;
 }
