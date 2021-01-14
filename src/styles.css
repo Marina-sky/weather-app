@@ -111,5 +111,10 @@ footer {
   text-align: center;
   position: relative;
   right: 10px;
-  bottom: 30px;
+  bottom: 40px;
+  color: #1f4068;
+}
+
+.forecast-icons {
+  width: 70px;
 }
