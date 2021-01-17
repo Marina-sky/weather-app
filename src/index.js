@@ -25,7 +25,7 @@ function formatHours(timestamp) {
   return `${hours}:${minutes}`;
 }
 
-// Show city and current weather
+// Show city, current weather and forecast
 function showCurrentWeather(response) {
   celsiusTemperature = response.data.main.temp;
 
@@ -40,7 +40,47 @@ function showCurrentWeather(response) {
     response.data.wind.speed
   );
   document.querySelector("#current-day-time").innerHTML = formatDate(response.data.dt * 1000);
-  document.querySelector("#condition-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#condition-icon").setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+  // Show weather quote
+  let weatherQuotes = [
+    "What is interesting about lightning storms? They can be quite striking.",
+    "Complaining about the weather is a full-time job.",
+    "It is best to read the weather forecast before praying for the rain.",
+    "Hello, ice to meet you.",
+    "The message from the sun was enlightening.",
+    "Weather forecast for tonight: Dark with a chance for tomorrow in the morning.",
+    "It is a great day for naps. Followed by naps.",
+    "Coming up with weather puns is a breeze."
+];
+
+  let weatherQuote = document.querySelector("#weather-quote");
+  let iconCode = response.data.weather[0].icon;
+
+  if (iconCode === "11d") {
+    weatherQuote.innerText = weatherQuotes[0];
+  }
+  else if (iconCode === "09d") {
+    weatherQuote.innerText = weatherQuotes[1];
+  }
+  else if (iconCode === "10d") {
+    weatherQuote.innerText = weatherQuotes[2];
+  }
+  else if (iconCode === "13d") {
+    weatherQuote.innerText = weatherQuotes[3];
+  }
+  else if (iconCode === "01d") {
+    weatherQuote.innerText = weatherQuotes[4];
+  }
+  else if (iconCode === "01n" || "02n" || "03n" || "04n") {
+    weatherQuote.innerText = weatherQuotes[5];
+  }
+  else if (iconCode === "02d" || "03d" || "04d") {
+    weatherQuote.innerText = weatherQuotes[6];
+  }
+  else {
+    weatherQuote.innerText = weatherQuotes[7];
+  }
 }
 
 function showForecast(response) {
