@@ -40,7 +40,7 @@ function showCurrentWeather(response) {
     response.data.wind.speed
   );
   document.querySelector("#current-day-time").innerHTML = formatDate(response.data.dt * 1000);
-  document.querySelector("#condition-icon").setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#condition-icon").setAttribute("src", `https://openweathermap.org/img/w/${response.data.weather[0].icon}.png`);
 
   // Show weather quote
   let weatherQuotes = [
@@ -88,23 +88,22 @@ function showForecast(response) {
   forecastElement.innerHTML = null;
   let forecast = null;
 
-  for (let index = 0; index < 6; index++) {
+  for (let index = 0; index < 8; index++) {
     let forecast = response.data.list[index];
     forecastElement.innerHTML += `
-    <div class="col-2">
+    <div class="col">
       <div class="hour">
       ${formatHours(forecast.dt * 1000)}
       </div>
-      <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" class="forecast-icons" />
+      <img src="http://openweathermap.org/img/w/${forecast.weather[0].icon}.png" class="forecast-icons" />
       <div class="forecast-temp">
       <strong>
-      ${Math.round(forecast.main.temp_max)}
+      ${Math.round(forecast.main.temp)}
       </strong> 
-      ${Math.round(forecast.main.temp_min)}
       </div>
     </div>
   `;
-  } 
+  }
 }
 
 function searchCity(cityInput) {

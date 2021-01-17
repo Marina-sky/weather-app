@@ -73,7 +73,7 @@ footer {
 }
 
 .current-icon {
-  font-size: 50px;
+  width: 60px;
   position: relative;
   bottom: 20px;
   right: 20px;
@@ -87,13 +87,13 @@ footer {
   font-size: 60px;
   color: #1f4068;
   position: relative;
-  right: 35px;
+  right: 20px;
 }
 
 .units {
   position: relative;
   bottom: 30px;
-  right: 35px;
+  right: 20px;
 }
 
 .units .active {
@@ -111,11 +111,10 @@ footer {
   text-align: center;
   position: relative;
   right: 10px;
-  bottom: 40px;
 }
 
 .forecast-icons {
-  width: 70px;
+  width: 50px;
 }
 
 .hour {
