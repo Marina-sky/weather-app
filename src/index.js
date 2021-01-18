@@ -51,35 +51,46 @@ function showCurrentWeather(response) {
     "The message from the sun was enlightening.",
     "Weather forecast for tonight: Dark with a chance for tomorrow in the morning.",
     "It is a great day for naps. Followed by naps.",
-    "Coming up with weather puns is a breeze."
+    "I tried to catch some fog. I mist."
 ];
 
   let weatherQuote = document.querySelector("#weather-quote");
   let iconCode = response.data.weather[0].icon;
 
-  if (iconCode === "11d") {
-    weatherQuote.innerText = weatherQuotes[0];
-  }
-  else if (iconCode === "09d") {
-    weatherQuote.innerText = weatherQuotes[1];
-  }
-  else if (iconCode === "10d") {
-    weatherQuote.innerText = weatherQuotes[2];
-  }
-  else if (iconCode === "13d") {
-    weatherQuote.innerText = weatherQuotes[3];
-  }
-  else if (iconCode === "01d") {
-    weatherQuote.innerText = weatherQuotes[4];
-  }
-  else if (iconCode === "01n" || "02n" || "03n" || "04n") {
-    weatherQuote.innerText = weatherQuotes[5];
-  }
-  else if (iconCode === "02d" || "03d" || "04d") {
-    weatherQuote.innerText = weatherQuotes[6];
-  }
-  else {
-    weatherQuote.innerText = weatherQuotes[7];
+  switch (iconCode) {
+    case "11d":
+    case "11n":
+      weatherQuote.innerText = weatherQuotes[0];
+      break;
+    case "09d":
+    case "09n":
+      weatherQuote.innerText = weatherQuotes[1];
+      break;
+    case "10d":
+    case "10n":
+      weatherQuote.innerText = weatherQuotes[2];
+      break;
+    case "13d":
+    case "13n":
+      weatherQuote.innerText = weatherQuotes[3];
+      break;
+    case "01d":
+      weatherQuote.innerText = weatherQuotes[4];
+      break;
+    case "01n":
+    case "02n":
+    case "03n":
+    case "04n":
+      weatherQuote.innerText = weatherQuotes[5];
+      break;
+    case "02d":
+    case "03d":
+    case "04d":
+      weatherQuote.innerText = weatherQuotes[6];
+      break;
+    case "50d":
+    case "50n":
+      weatherQuote.innerText = weatherQuotes[7];
   }
 }
 
